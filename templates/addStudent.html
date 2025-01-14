@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block title %}
+addStudent
+{% endblock %}
+{% block content %}
+<form action="{{ url_for('addStudent') }}" method="POST">
+    <h5><u> Student Details : </u></h5>
+    <table>              
+        <tr>
+            <td>NAME</td>
+            <td><input type="text" name="name" /></td>
+        </tr>
+        <tr>
+            <td>AGE</td>
+            <td><input type="text" name="age" /></td>
+        </tr>
+        <tr>
+            <td>GRADE</td>
+            <td><input type="text" name="grade" /></td>
+        </tr>
+        <tr>
+            <td>SUBJECTS</td>
+            <td><input type="text" name="subjects" /></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td> <input type="submit" class="button" value="Submit" /></td>
+        </tr>
+    </table>
+</form>
+{% endblock %}

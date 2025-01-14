@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block title %}
+{% endblock %}
+{% block content %}
+
+<h3> Available Students </h3>
+    <table>
+        <thead>
+            <td>ID</td>
+            <td>NAME</td>
+            <td>AGE</td>
+            <td>GRADE</td>
+            <td>SUBJECTS</td>
+            <td>ACTION</td>
+        </thead>
+
+        {% for student in students %}
+        <tr>
+            <td> {{student[0]}}</td>
+            <td>{{student[1]}}</td>
+            <td>{{student[2]}}</td>
+            <td>{{student[3]}}</td>
+            <td>                
+                {{student[4]}}                
+            </td>
+            <td>
+                <input type="button" class="button" value="Edit" onclick="location.href='/edit/{{student[0]}}'"/>
+                <input type="button" class="button" value="Delete" onclick="location.href='/delete/{{student[0]}}'"/>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    
+    {% endblock %}

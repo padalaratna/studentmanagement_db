@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% block title %}
+Edit Students
+{% endblock %}
+{% block content %}
+<form action="{{ url_for('updateStudent') }}" method ="POST">
+    <h5><u> Student Details : </u></h5>
+    <input type="hidden" name="id"  value="{{content[0]}}"/>
+    
+    <table>   
+        <tr>
+            <td>ID</td>
+            <td><input type="text" name="id"  value="{{content[0]}}" disabled="true"/></td>
+        </tr>           
+        <tr>
+            <td>NAME</td>
+            <td><input type="text" name="name"  value="{{content[1]}}"/></td>
+        </tr>
+        <tr>
+            <td>AGE</td>
+            <td><input type="text" name="age" value="{{content[2]}}"/></td>
+        </tr>
+        <tr>
+            <td>GRADE</td>
+            <td><input type="text" name="grade" value="{{content[3]}}"/></td>
+        </tr>
+        <tr>
+            <td>SUBJECTS</td>
+            <td><input type="text" name="subjects" value="{{content[4]}}"/></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td> <input type="submit" class="button" value="Submit"/></td>
+        </tr>
+    </table>
+</form>
+{% endblock %}
