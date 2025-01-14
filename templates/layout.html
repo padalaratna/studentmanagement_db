@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>{% block title %}{% endblock %}</title>   
+       <div style="text-align: center; color: green;"> <u><h1>Student Management</h1> </u></div>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css')}}" />
+    </head>
+
+    <body>
+        <div class="navbar">
+            <a href="{{ url_for('home') }}" class="navbar-item">Home</a> &nbsp;&nbsp;&nbsp;              
+            <a href="{{ url_for('viewAll') }}" class="navbar-item">View All</a>  &nbsp;&nbsp;&nbsp;       
+            <a href="{{ url_for('addStudent') }}" class="navbar-item">Add New Student</a>      
+                 
+            <br>
+            <br>
+            <br>          
+        </div>
+        <div class="body-content">
+            {% block content %}
+            {% endblock %}
+           
+        </div>
+
+    </body>
+</html>

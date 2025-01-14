@@ -1,0 +1,29 @@
+   table, th, td {
+        border: 1px solid yellowgreen;
+    }
+
+    table {
+        width: 60%;
+    }
+
+    thead {
+        background-color: rgb(229, 245, 91);
+    }
+
+    .button {
+        background-color: cadetblue; /* Green */       
+        color: white;        
+        text-align: center;      
+        display: inline-block;
+        font-size: 12px;
+        border-style: groove;
+      }
+      body{
+        background-color: rgb(251, 252, 249);
+       
+      }
+      
+      .navbar-item {
+        color: rgb(8, 68, 8);
+
+      }
