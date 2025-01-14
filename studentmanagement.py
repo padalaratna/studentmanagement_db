@@ -66,8 +66,7 @@ def add_student(name,age,grade,subjects):
     try:
       with  db_connection() as conn:
         cursor = conn.cursor()
-        insert_student_query = f'INSERT INTO STUDENT_TAB (ID,NAME,AGE,GRADE,SUBJECTS) VALUES ({id},"{name}",{age},{grade},"{subjects}")'         
-        print(insert_student_query)
+        insert_student_query = f'INSERT INTO STUDENT_TAB (ID,NAME,AGE,GRADE,SUBJECTS) VALUES ({id},"{name}",{age},{grade},"{subjects}")'     
         cursor.execute(insert_student_query)       
         conn.commit()        
     except sqlite3.OperationalError as e:
@@ -78,8 +77,7 @@ def delete_student(student_id):
    try:
       with  db_connection() as conn:
         cursor = conn.cursor()
-        delete_student_query = f'DELETE FROM STUDENT_TAB WHERE ID = {student_id}'
-        print(delete_student_query)
+        delete_student_query = f'DELETE FROM STUDENT_TAB WHERE ID = {student_id}'       
         cursor.execute(delete_student_query)       
         conn.commit()        
    except sqlite3.OperationalError as e:
@@ -90,8 +88,7 @@ def edit_student(student_id,name,age,grade,subjects):
     try:
       with  db_connection() as conn:
         cursor = conn.cursor()
-        update_student_query = f'UPDATE STUDENT_TAB SET NAME = "{name}", AGE = {age} , GRADE = {grade} ,  SUBJECTS = "{subjects}"  WHERE ID = {student_id}'
-        print(update_student_query)
+        update_student_query = f'UPDATE STUDENT_TAB SET NAME = "{name}", AGE = {age} , GRADE = {grade} ,  SUBJECTS = "{subjects}"  WHERE ID = {student_id}'        
         cursor.execute(update_student_query)       
         conn.commit()         
     except sqlite3.OperationalError as e:
