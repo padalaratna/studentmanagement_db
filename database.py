@@ -10,7 +10,9 @@ delete_student_query = 'DELETE FROM STUDENT_TAB WHERE ID = 1'
 try:
     with sqlite3.connect(database) as conn:
         cursor = conn.cursor()
-        cursor.execute(create_table)   
+        cursor.execute("DROP TABLE IF EXISTS STUDENT_TAB")
+        cursor.execute(create_table) 
+        print("Table People is Ready!") 
 
 except sqlite3.OperationalError as e:
     print(e)
